@@ -241,7 +241,7 @@ for name in info_dict:
 print(f"升职加薪后：{info_dict}")
 //18 文件练习
 //（1）读取全部内容 用字符串count方法统计itheima出现数量
-f=open("D:\wenjian\word.txt","r",encoding="utf-8")
+f=open("D:/wenjian/word.txt","r",encoding="utf-8")
 content=f.read()
 count=content.count("itheima")
 print(count)
@@ -256,4 +256,29 @@ for line in f:
             count+=1
 print(count)
 f.close()
+#19文件读取判断综合练习
+fr=open(r"D://wenjian//bili.txt","r",encoding="utf-8")
+#备份
+fw=open(r"D://wenjian//bili.txt.bak","w",encoding="utf-8")
+#for 循环读取文件
+for line in fr:
+    line=line.strip()
+#判断内容，将满足的内容写出
+    if line.split(",")[4]=="测试":
+        continue  #continue进入下一次循环，这一次后面的内容就跳过了
+#将内容写进去
+    fw.write(line)
+#由于前面对内容进行了strip()的操作，所以要手动的写出换行符
+    fw.write("\n")
+fr.close()
+fw.close()
+#包与功能的开发
+import my_utils.str_util
+from my_utils  import file_util
+
+print(my_utils.str_util.str_reverse("黑马程序员"))
+print(my_utils.str_util.substr("itheima",0,4))
+
+file_util.append_to_file("D://wenjian//test_append.txt","itheima")
+file_util.print_file("D://wenjian//test_append.txt")
 """

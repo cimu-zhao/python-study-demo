@@ -355,4 +355,5 @@ b2=Book("朝花夕拾","鲁迅",25.0)
 b1.show_info()
 b2.show_info()
 print(f"类属性：  {Book.kind}")
+
 """
